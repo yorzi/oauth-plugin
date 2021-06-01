@@ -2,7 +2,7 @@
 class ClientApplication
   attr_accessor :key
 
-  def self.find_by_key(key)
+  def self.find_by(key: key)
     ClientApplication.new(key)
   end
 

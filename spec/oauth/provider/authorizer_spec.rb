@@ -15,7 +15,7 @@ describe OAuth::Provider::Authorizer do
         @app  = double("app")
         @code = double("code", :token => "secret auth code")
 
-        ::ClientApplication.should_receive(:find_by_key!).with('client id').and_return(@app)
+        ::ClientApplication.should_receive(:find_by).with(key: 'client id').and_return(@app)
       end
 
       it "should allow" do
@@ -105,7 +105,7 @@ describe OAuth::Provider::Authorizer do
         @app  = double("app")
         @token = double("token", :token => "secret auth code")
 
-        ::ClientApplication.should_receive(:find_by_key!).with('client id').and_return(@app)
+        ::ClientApplication.should_receive(:find_by).with(key: 'client id').and_return(@app)
       end
 
       it "should allow" do
